@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Homepage;
+use DB;
 
-class HomepageController extends Controller
+class HomepagesController extends Controller
 {
     /**
      * Create a new controller instance
@@ -16,14 +18,20 @@ class HomepageController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-
+    
     /**
-     * Display the homepage
+     * Show the form for editing the specified resource
      * 
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function edit($id)
     {
-        return view('homepage.index');
+        $homepage = Homepage::find($id);
+        if (auth()->users()->id !== $homepage->user_id) {
+            return redirect('/')->with('error', 'Unauthorized User.');
+        }
+
+        return view('homepages.edit')->with('homepage', $homepage);
     }
 }
