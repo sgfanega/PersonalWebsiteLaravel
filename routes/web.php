@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('/', 'PagesController');
-
+Route::resource('homepage', 'HomepageController');
 Auth::routes();
