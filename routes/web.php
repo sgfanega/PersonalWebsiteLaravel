@@ -19,6 +19,9 @@ Route::get('/', 'HomepageController@index')->name('homepage');
 // Homepage Page Views
 Route::resource('homepage', 'HomepageController');
 
+// Resume Page Views
+Route::resource('resume', 'ResumeController');
+
 // Home Login Redirect
 Route::get('home', function () {
     return redirect('/');
