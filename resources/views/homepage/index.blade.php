@@ -1,23 +1,23 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5 homepage">
+<div class="flex-container d-flex justify-content-center align-items-center homepage">
     @if(count($homepages) > 0)
         @foreach($homepages as $homepage)
-            <div class="h-100 row d-flex align-items-center">
-                <div class="col d-flex justify-content-center">
+            <div class="row">
+                <div class="col">
                     <h1 class="display-3 text-center">{{$homepage->name}}</h1>
                 </div>
             </div>
-            <div class="row d-flex align-items-center">
-                <div class="col d-flex justify-content-center">
+            <div class="row">
+                <div class="col">
                     <p class="lead text-center">{{$homepage->job_title}}</p>
                 </div>
             </div>
             @if(!Auth::guest())
                 @if(Auth::user()->id == 1)
-                <div class="row d-flex align-items-center">
-                    <div class="col d-flex justify-content-center">
-                        <a href="/homepage/{{$homepage->id}}/edit" class="btn btn-primary">Edit</a>
+                <div class="row">
+                    <div class="col">
+                        <a href="/homepage/{{$homepage->id}}/edit" class="btn btn-primary text-center">Edit</a>
                     </div>
                 </div>
                 @endif
