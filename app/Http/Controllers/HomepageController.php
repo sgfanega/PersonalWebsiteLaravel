@@ -27,7 +27,7 @@ class HomepageController extends Controller
     public function index()
     {
         $homepage = DB::select('SELECT * FROM homepages');
-        //return $homepage;
+
         return view('homepage.index')->with('homepage', $homepage[0]);
     }
 
