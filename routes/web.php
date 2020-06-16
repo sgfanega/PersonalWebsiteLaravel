@@ -12,6 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Main Page Directs
 Route::resource('/', 'PagesController');
+
+// Homepage Page Views
 Route::resource('homepage', 'HomepageController');
+
+// Home Login Redirect
+Route::get('home', function () {
+    return redirect('/');
+});
+
 Auth::routes();
