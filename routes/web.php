@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Main Page Directs
-Route::resource('/', 'PagesController');
+
+// Redirect / to /homepage
+Route::get('/', 'HomepageController@index')->name('homepage');
 
 // Homepage Page Views
 Route::resource('homepage', 'HomepageController');
