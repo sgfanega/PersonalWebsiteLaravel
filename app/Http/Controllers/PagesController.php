@@ -15,6 +15,6 @@ class PagesController extends Controller
     {
         $homepages = DB::select('SELECT * FROM homepages');
         
-        return view('homepages.index')->with('homepages', $homepages);
+        return view('homepage.index')->with('homepages', $homepages);
     }
 }
