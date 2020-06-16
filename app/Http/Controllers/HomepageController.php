@@ -18,7 +18,19 @@ class HomepageController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-    
+
+    /**
+     * Show the index for homepage
+     * 
+     * @return \Illuminate\Htpp\Response
+     */
+    public function index()
+    {
+        $homepage = DB::select('SELECT * FROM homepages');
+        //return $homepage;
+        return view('homepage.index')->with('homepage', $homepage[0]);
+    }
+
     /**
      * Show the form for editing the specified resource
      * 
