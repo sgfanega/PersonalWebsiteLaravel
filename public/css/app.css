@@ -19,6 +19,32 @@
   width: 200px;
 }
 
+.projects img {
+  height: 10em;
+  width: 10em;
+}
+
+.projects .col {
+  padding: 0em 1em 0em 1;
+}
+
+.projects-text {
+  flex-direction: column;
+}
+
+.projects-text a {
+  color: #6c757d;
+}
+
+.projects-text a:link {
+  text-decoration: none;
+}
+
+.projects-text a:hover {
+  text-decoration: none;
+  color: #495057;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
