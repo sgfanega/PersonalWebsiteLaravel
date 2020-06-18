@@ -15,6 +15,15 @@
                         </a>
                         <p>{{$project->description}}</p>
                     </div>
+                    @if(!Auth::guest())
+                        @if(Auth::user()->id == 1)
+                        <div class="row">
+                            <div class="col d-flex align-items-center">
+                                <a href="/projects/{{$project->id}}/edit" class="btn btn-primary text-center">Edit</a>
+                            </div>
+                        </div>
+                        @endif
+                    @endif
                 </div>
             @endforeach
         @endif
