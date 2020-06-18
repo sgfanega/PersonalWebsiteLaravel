@@ -10,6 +10,15 @@
   flex-direction: column;
 }
 
+.aboutme {
+  flex-direction: column;
+}
+
+.aboutme img {
+  height: 200px;
+  width: 200px;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
