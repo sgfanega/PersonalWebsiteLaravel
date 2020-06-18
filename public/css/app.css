@@ -19,6 +19,10 @@
   width: 200px;
 }
 
+.projects {
+  padding: 0em 0em 2.5em 0em;
+}
+
 .projects img {
   height: 10em;
   width: 10em;
@@ -33,11 +37,9 @@
 }
 
 .projects-text a {
-  color: #6c757d;
-}
-
-.projects-text a:link {
+  background-color: transparent;
   text-decoration: none;
+  color: #cccccc;
 }
 
 .projects-text a:hover {
