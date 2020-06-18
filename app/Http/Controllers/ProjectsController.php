@@ -65,4 +65,47 @@ class ProjectsController extends Controller
 
         return redirect('/projects')->with('success', 'Project Created');
     }
+
+    /**
+     * Show the form for editing the specified resource
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $project = Project::find($id);
+
+        if (auth()->user()->id !== 1) {
+            return redirect('/projects')->with('error', 'Unauthorized page');
+        }
+
+        return view('projects.edit')->with('project', $project);
+    }
+
+    /**
+     * Update the specified resource in storage
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title'=>'required',
+            'language'=>'required',
+            'link'=>'required',
+            'description'=>'required'
+        ]);
+
+        $project = Project::find($id);
+        $project->title = $request->input('title');
+        $project->language = $request->input('language');
+        $project->link = $request->input('link');
+        $project->description = $request->input('description');
+        $project->save();
+
+        return redirect('/projects')->with('success', 'Project Edited');
+    }
 }
