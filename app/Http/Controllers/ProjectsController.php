@@ -30,4 +30,39 @@ class ProjectsController extends Controller
 
         return view('projects.index')->with('projects', $projects);
     }
+    
+    /**
+     * Show the form for creating a new resource
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('projects.create');
+    }
+
+    /**
+     * Store a newly created resource in database
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title'=>'required',
+            'language'=>'required',
+            'link'=>'required',
+            'description'=>'required'
+        ]);
+
+        $project = new Project;
+        $project->title = $request->input('title');
+        $project->language = $request->input('language');
+        $project->link = $request->input('link');
+        $project->description = $request->input('description');
+        $project->save();
+
+        return redirect('/projects')->with('success', 'Project Created');
+    }
 }
