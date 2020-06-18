@@ -25,6 +25,9 @@ Route::resource('resume', 'ResumeController');
 //About Me Page Views
 Route::resource('aboutme', 'AboutMeController');
 
+//Projects Page Views
+Route::resource('projects', 'ProjectsController');
+
 // Home Login Redirect
 Route::get('home', function () {
     return redirect('/');
