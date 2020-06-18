@@ -36,6 +36,12 @@
                         <li class="nav_item">
                             <a href="/resume" class="nav-link">Résumé</a>
                         </li>
+                        <li class="nav_item">
+                            <a href="/aboutme" class="nav-link">About Me</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="/projects" class="nav-link">Projects</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
