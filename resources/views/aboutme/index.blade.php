@@ -16,12 +16,13 @@
     <hr>
     <div class="row">
         <div class="col">
-            <img src="/storage/portrait_image/{{$aboutme->portrait_image}}" alt="Self-Portrait" class="rounded img-thumbnail">
+            <img src="/storage/portrait_image/{{$aboutme->portrait_image}}" alt="Self-Portrait" class="rounded">
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col">
-            <p class="lead">{{$aboutme->paragraph}}</p>
+            <p>{!! nl2br(e($aboutme->paragraph)) !!}</p>
         </div>
     </div>
 </div>
