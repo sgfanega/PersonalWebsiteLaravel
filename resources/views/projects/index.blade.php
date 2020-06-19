@@ -12,7 +12,7 @@
             @foreach($projects as $project)
                 <div class="container d-flex projects">
                     <a target="_blank" href="//{{$project->link}}">
-                        <img src="/storage/logo_images/{{$project->language}}.png" alt="{{$project->language}} Logo" class="">
+                        <img src="/storage/logo_images/{{$project->language}}.png" alt="{{$project->language}} Logo">
                     </a>
                     <div class="container d-flex justify-content-center align-content-center projects-text">
                         <a target="_blank" href="//{{$project->link}}">
@@ -23,7 +23,7 @@
                     @if(!Auth::guest())
                         @if(Auth::user()->id == 1)
                         <div class="row">
-                            <div class="col d-flex align-items-center">
+                            <div class="col d-flex justify-content-end align-items-center">
                                 <a href="/projects/{{$project->id}}/edit" class="btn btn-primary text-center">Edit</a>
                             </div>
                         </div>
