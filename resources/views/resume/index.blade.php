@@ -17,7 +17,6 @@
         <div class="embed-responsive embed-responsive-1by1">
             <iframe class="embied-responsive-item" src="/storage/pdf_sources/{{$resume->pdf_source}}" title="Resume"></iframe>
         </div>
-        <p>If you cannont see the PDF, click <a href="/storage/pdf_sources/{{$resume->pdf_source}}.pdf" download>here</a></p> 
     </div>
     @endif
 @endsection
