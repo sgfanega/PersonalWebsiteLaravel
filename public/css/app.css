@@ -32,6 +32,13 @@
   padding: 0em 1em 0em 1;
 }
 
+@media only screen and (max-width: 425px) {
+  .projects img {
+    height: 5em;
+    width: 5em;
+  }
+}
+
 .projects-text {
   flex-direction: column;
 }
