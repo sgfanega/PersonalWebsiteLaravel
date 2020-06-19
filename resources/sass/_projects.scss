@@ -1,31 +1,25 @@
-.projects
-{
+.projects {
     padding: 0em 0em 2.5em 0em;
-    img
-    {
+    img {
         height: 10em;
         width: 10em;
     }
 
-    .col
-    {
+    .col {
         padding: 0em 1em 0em 1;
     }
 
 }
 
-.projects-text
-{   
+.projects-text {   
     flex-direction: column;
 
-    a
-    {
+    a {
         background-color: transparent;
         text-decoration: none;
         color: $static_link_color;
     }
-    a:hover 
-    {
+    a:hover {
         text-decoration: none;
         color: $hover_link_color;
     }
