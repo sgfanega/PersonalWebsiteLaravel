@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex">
-    <div class="row">
+<div class="container">
+        @if(!Auth::guest())
+            @if(Auth::user()->id == 1)
+                <a href="/projects/create" class="btn btn-success text-center">Create</a>
+                <hr>
+            @endif
+        @endif
         @if(count($projects) > 0)
             @foreach($projects as $project)
                 <div class="container d-flex projects">
@@ -27,6 +32,5 @@
                 </div>
             @endforeach
         @endif
-    </div>
 </div>
 @endsection
