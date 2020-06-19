@@ -10,7 +10,7 @@
     <div class="form-group">
         {{Form::label('language', 'Language')}}
         <br>
-        {{Form::select('language', ['CSharp'=>'CSharp', 'PHP'=>'PHP', 'Java'=>'Java', 'Python'=>'Python', 'Other'=>'NoLogo'], $project->language)}}
+        {{Form::select('language', ['CSharp'=>'CSharp', 'PHP'=>'PHP', 'Java'=>'Java', 'Python'=>'Python', 'NoLogo'=>'Other'], $project->language)}}
     </div>
     <div class="form-group">
         {{Form::label('link', 'Link')}}
