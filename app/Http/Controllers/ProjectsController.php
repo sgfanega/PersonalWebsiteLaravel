@@ -108,4 +108,23 @@ class ProjectsController extends Controller
 
         return redirect('/projects')->with('success', 'Project Edited');
     }
+
+    /**
+     * Remove the specified resource from storage
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $project = Project::find($id);
+
+        if (auth()->user()->id !== 1) {
+            return redirect('/projects')->with('error', 'Unatuhorized Page');
+        }
+
+        $project->delete();
+
+        return redirect('/projects')->with('success', 'Project Deleted');
+    }
 }
