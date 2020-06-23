@@ -82,10 +82,10 @@
             </div>
             <div class="d-flex footer">
                 <a target="_blank" href="//www.github.com/sgfanega">
-                    <img src="/storage/logo_images/GithubLogo.png" alt="Github Link">
+                    <img src="{{ asset('/storage/logo_images/GithubLogo.png') }}" alt="Github Link">
                 </a>
                 <a target="_blank" href="//www.linkedin.com/in/steve-fanega-ii/">
-                    <img src="/storage/logo_images/LinkedInLogo.png" alt="LinedIn Link">
+                    <img src="{{ asset('/storage/logo_images/LinkedInLogo.png') }}" alt="LinedIn Link">
                 </a>
             </div>
         </div>
