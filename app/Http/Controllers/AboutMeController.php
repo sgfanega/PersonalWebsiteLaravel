@@ -71,10 +71,6 @@ class AboutMeController extends Controller
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             // Get extension
             $fileExtension = $request->file('portrait_image')->getClientOriginalExtension();
-            // Returns error if file is not a png
-            if($fileExtension != 'png') {
-                return redirect('/aboutme/' . $id . '/edit')->with('error', "Image is not a PNG");
-            }
             // Filename to store - Adding time incase files have the same name
             $fileNameToStore = $fileName . '_' . time() . '.' . $fileExtension;
             // Upload image
