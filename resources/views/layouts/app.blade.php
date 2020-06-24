@@ -81,6 +81,9 @@
                 <p>&copy; Steve Fanega II 2020 </p>
             </div>
             <div class="d-flex footer">
+                <a target="_blank" href="mailto:steve.fanega.ii@gmail.com">
+                    <img src="{{ asset('/storage/logo_images/GmailLogo.png') }}" alt="Gmail Link">
+                </a>
                 <a target="_blank" href="//www.github.com/sgfanega">
                     <img src="{{ asset('/storage/logo_images/GithubLogo.png') }}" alt="Github Link">
                 </a>
