@@ -33,4 +33,9 @@ Route::get('home', function () {
     return redirect('/');
 });
 
+// Register Redirect
+Route::get('register', function () {
+    return redirect('/');
+});
+
 Auth::routes();
