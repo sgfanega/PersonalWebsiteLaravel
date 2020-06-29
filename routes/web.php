@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-Route::get('/steve', 'StockPredictorController@index');
-Route::post('/steve', 'StockPredictorController@addQueryStrings');
+
+// StockPredictor Page Views
+Route::get('/stockpredictor', 'StockPredictorController@index');
+Route::post('/stockpredictor', 'StockPredictorController@addQueryStrings');
 
 // Redirect / to /homepage
 Route::get('/', 'HomepageController@index')->name('homepage');

@@ -16,15 +16,47 @@ class StockPredictorController extends Controller
     public function index(Request $request)
     {
         if(!empty($request->has('ticker_symbol'))) {
-            $results = $this->getPythonScript($request->ticker_symbol, strval($request->forecast_days), $request->machine_learning_type);
+            $python_script_output = $this->getPythonScript($request->ticker_symbol, strval($request->forecast_days), $request->machine_learning_type);
+            
+            // Chart Labels Remove Confidence
+            $labels = $this->getLabelArrayFromPythonScript($python_script_output);
+            unset($labels[0]);
+            $labels = array_values($labels);
 
-            return view('stockpredictor.index')->with('results', $results);
+            // Chart Data Remove Confidence
+            $predictions = $this->getPredictionArrayFromPythonScript($python_script_output);
+            unset($predictions[0]);
+            $predictions = array_values($predictions);
+
+
+            $test_array = ['Something', 'Something New'];
+            $chartjs = app()->chartjs
+            ->name('StockPredictor')
+            ->type('line')
+            ->size(['width' => 400, 'height' => 200])
+            ->labels($labels)
+            ->datasets([
+                [
+                    "label" => $request->ticker_symbol . " Predictions USD",
+                    'backgroundColor' => "rgba(38, 185, 154, 0.31)",
+                    'borderColor' => "rgba(38, 185, 154, 0.7)",
+                    "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+                    "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+                    "pointHoverBackgroundColor" => "#fff",
+                    "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                    'data' => $predictions,
+                ]
+            ])
+            ->options([]);
+
+            return view('stockpredictor.index')->with('chartjs', $chartjs);
         }
+        
         return view('stockpredictor.index');
     }
 
     /**
-     * Get the Python Script
+     * Get the Python Script Output
      * 
      * @return string $result
      */
@@ -34,8 +66,44 @@ class StockPredictorController extends Controller
             . $ticker_symbol . " "
             . $forecast_days . " "
             . $machine_learning_type . " 2>&1");
+        
+        $result = strstr($result, "{");
+        
+        // Checks if the result is json_decodeable, if not the ticker symbol is not valid
+        if($result = json_decode($result, true)) {
+            return $result;
+        }
 
-        return strstr($result, "{");
+        // Returns to the same page with tickery symbol error
+        return redirect()->back()->with('error', 'Not a valid Stock Ticker Symbol');
+    }
+
+    /**
+     * Get the labels of the Python Script Output
+     * 
+     * @return array $labels
+     */
+    public function getLabelArrayFromPythonScript($json_array)
+    {
+        foreach ($json_array as $key => $prediction) {
+            $labels[] = $key;
+        }
+
+        return $labels;
+    }
+
+    /**
+     * Get the predictions of the Python Script Output
+     * 
+     * @return array $predictions
+     */
+    public  function getPredictionArrayFromPythonScript($json_array)
+    {
+        foreach ($json_array as $key => $prediction) {
+            $predictions[] = $prediction;
+        }
+
+        return $predictions;
     }
 
     /**
@@ -51,7 +119,7 @@ class StockPredictorController extends Controller
             'machine_learning_type' => 'required'
         ]);
 
-        return redirect('/steve?ticker_symbol=' 
+        return redirect('/stockpredictor?ticker_symbol=' 
             . $request->ticker_symbol
             . '&forecast_days='
             . $request->forecast_days

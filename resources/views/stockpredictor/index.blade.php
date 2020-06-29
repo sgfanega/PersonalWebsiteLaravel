@@ -2,12 +2,11 @@
 
 @section('content')
     <h1>Stock Predictor</h1>
-    @if(!empty($results))
-        
-    
-        
+    @if(!empty($chartjs))
+        <div style="width:100%;">
+            {!! $chartjs->render() !!}
+        </div>
     @endif
-    @chart('sample_chart');
     {!! Form::open(['action'=>['StockPredictorController@index'], 'method'=>'POST', 'enctype'=>'multipart'])!!}
         <div class="form-row">
             <div class="form-group col-md-6">
