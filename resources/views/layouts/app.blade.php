@@ -37,7 +37,7 @@
                             <a href="/aboutme" class="nav-link">About Me</a>
                         </li>
                         <li class="nav_item">
-                                <a class="navbar-brand nav-link" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+                            <a class="navbar-brand nav-link" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
                         </li>
                         <li class="nav_item">
                             <a href="/projects" class="nav-link">Projects</a>
