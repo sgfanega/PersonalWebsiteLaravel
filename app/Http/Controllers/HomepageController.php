@@ -28,6 +28,14 @@ class HomepageController extends Controller
     {
         $homepage = DB::select('SELECT * FROM homepages');
 
+        if (!$homepage) {
+            $homepage = Homepage();
+            $homepage->name = "Steve Fanega";
+            $homepage->job_title = "Computer Scientist";
+
+            return view('homepage.index')->with('homepage', $homepage);
+        } 
+
         return view('homepage.index')->with('homepage', $homepage[0]);
     }
 
