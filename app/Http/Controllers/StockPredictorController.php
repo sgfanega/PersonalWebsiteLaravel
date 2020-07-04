@@ -52,7 +52,7 @@ class StockPredictorController extends Controller
             return view('stockpredictor.index')->with('chartjs', $chartjs);
         }
 
-        return view('stockpredictor.index');//->with('chartjs', $chartjs);
+        return view('stockpredictor.index');
     }
 
     /**
@@ -62,12 +62,15 @@ class StockPredictorController extends Controller
      */
     public function getPythonScript(string $ticker_symbol, string $forecast_days, string $machine_learning_type)
     {
-        $result = shell_exec("python "  . public_path() . "\storage\python\StockPredictor.py " 
-            . $ticker_symbol . " "
-            . $forecast_days . " "
-            . $machine_learning_type . " 2>&1");
-        
-        $result = strstr($result, "{");
+        $process = new Process(['python', public_path() . '\storage\python\StockPredictor.py', 'MSFT', '10', 'LR']);
+        $process->run();
+
+        //  executes after the command finishes
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $result = strstr($process->getOutput(), "{");
         
         // Checks if the result is json_decodeable, if not the ticker symbol is not valid
         if($result = json_decode($result, true)) {
@@ -125,5 +128,21 @@ class StockPredictorController extends Controller
             . $request->forecast_days
             . '&machine_learning_type='
             . $request->machine_learning_type);
+    }
+
+    /**
+     * Use Symfony Component Process
+     */
+    public function useSymfonyProcess()
+    {
+        $process = new Process(['python', public_path() . '\storage\python\StockPredictor.py', 'MSFT', '10', 'LR']);
+        $process->run();
+
+        //  executes after the command finishes
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        echo $process->getOutput();
     }
 }
