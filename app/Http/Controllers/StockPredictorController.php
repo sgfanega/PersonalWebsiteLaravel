@@ -62,7 +62,7 @@ class StockPredictorController extends Controller
      */
     public function getPythonScript(string $ticker_symbol, string $forecast_days, string $machine_learning_type)
     {
-        $process = new Process(['python', public_path() . '\storage\python\StockPredictor.py', 'MSFT', '10', 'LR']);
+        $process = new Process(['python', public_path() . '/storage/python/StockPredictor.py', $ticker_symbol, $forecast_days, $machine_learning_type]);
         $process->run();
 
         //  executes after the command finishes
