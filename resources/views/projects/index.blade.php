@@ -25,10 +25,9 @@
                         <div class="row">
                             <div class="col d-flex justify-content-end align-items-center">
                                 <a href="/projects/{{$project->id}}/edit" class="btn btn-primary text-center">Edit</a>
-                                <br>
                                 {!! Form::open(['action'=>['ProjectsController@update', $project->id], 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
                                 {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+                                {{Form::submit('Delete', ['class'=>'btn btn-danger ml-1'])}}
                                 {!! Form::close() !!}
                             </div>
                         </div>
