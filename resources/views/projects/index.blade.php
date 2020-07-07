@@ -15,7 +15,7 @@
                         <img src="/storage/logo_images/{{$project->language}}.png" alt="{{$project->language}} Logo">
                     </a>
                     <div class="container d-flex justify-content-center align-content-center projects-text">
-                        <a target="_blank" href="//{{$project->link}}">
+                        <a target="_blank" href="{{$project->link}}">
                             <h3>{{$project->title}}</h3>
                         </a>
                         <p>{{$project->description}}</p>
