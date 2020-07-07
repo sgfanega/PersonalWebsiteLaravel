@@ -11,7 +11,7 @@
         @if(count($projects) > 0)
             @foreach($projects as $project)
                 <div class="container d-flex projects">
-                    <a target="_blank" href="//{{$project->link}}">
+                    <a target="_blank" href="{{$project->link}}">
                         <img src="/storage/logo_images/{{$project->language}}.png" alt="{{$project->language}} Logo">
                     </a>
                     <div class="container d-flex justify-content-center align-content-center projects-text">
