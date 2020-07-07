@@ -24,9 +24,7 @@
                 {{Form::textarea('description', $project->description, ['class'=>'form-control', 'placeholder'=>'Description'])}}
             </div>
             {{Form::hidden('_method', 'PUT')}}
-            {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-            {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+            {{Form::submit('Save', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>
 @endsection
