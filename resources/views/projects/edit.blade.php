@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.default')
 @section('content')
     <div class="container">
         <a href="/projects" class="btn btn-dark">Back</a>

@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.default')
 @section('content')
     <h1>Edit About Me</h1>
     {!! Form::open(['action'=>['AboutMeController@update', $aboutme->id], 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}

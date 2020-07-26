@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.default')
 @section('content')
     <h1>Stock Predictor</h1>
     @if(!empty($chartjs))

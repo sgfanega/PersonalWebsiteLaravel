@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 @section('content')
 <div class="flex-container d-flex justify-content-center align-items-center homepage">
     @if(!empty($homepage))

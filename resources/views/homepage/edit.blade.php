@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 @section('content')
     <h1>Edit Homepage</h1>
     {!! Form::open(['action'=>['HomepageController@update', $homepage->id], 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
