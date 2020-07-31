@@ -1,18 +1,20 @@
 .projects {
-    padding: 0em 0em 2.5em 0em;
-    
-
+    margin: 0em 0em 2.5em 0em;
+    border-radius: 1em;
 
     img {
+    /* Image Height */
         height: 10em;
         width: 10em;
     }
 
     .col {
-        padding: 0em 1em 0em 1;
+    /* Margin for col div */
+        margin: 0em 1em 0em 1em;
     }
-    
+
     @media only screen and (max-width: 425px) {
+    /* Media Query Image Height for Mobile */
         img {
             height: 5em;
             width: 5em;
@@ -20,15 +22,20 @@
     }
 }
 
-.projects-text {   
+.projects-text {
+    /* Flex Direction*/   
     flex-direction: column;
+    color:white;
 
     a {
+    /* Link Customization */
         background-color: transparent;
         text-decoration: none;
-        color: $static_link_color;
+        color: whitesmoke;
     }
+
     a:hover {
+    /* Link Hover Customization */
         text-decoration: none;
         color: $hover_link_color;
     }

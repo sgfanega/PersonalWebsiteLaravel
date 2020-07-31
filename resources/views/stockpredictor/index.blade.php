@@ -1,13 +1,14 @@
 @extends('layouts.default')
 @section('content')
-    <h1>Stock Predictor</h1>
+<div class="container stock-predictor">
+    <h1 class="display-6 text-white">Stock Predictor</h1>
     @if(!empty($chartjs))
         <div style="width:100%;">
             {!! $chartjs->render() !!}
         </div>
     @endif
     {!! Form::open(['action'=>['StockPredictorController@index'], 'method'=>'POST', 'enctype'=>'multipart'])!!}
-        <div class="form-row">
+        <div class="form-row text-white">
             <div class="form-group col-md-6">
                 {{Form::label('ticker_symbol', 'Ticker Symbol')}}
                 {{Form::text('ticker_symbol', '' ,['class'=>'form-control', 'placeholder'=>'MSFT', 'minlength'=>1, 'maxlength'=>5])}}
@@ -28,4 +29,5 @@
         {{Form::hidden('_method', 'POST')}}
         {{Form::submit('Analyze', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection

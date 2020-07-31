@@ -1,8 +1,8 @@
-<div class="container d-flex justify-content-between">
+<div class="container d-flex justify-content-between pb-5 footer">
     <div>
         <p>&copy; Steve Fanega II 2020 </p>
     </div>
-    <div class="d-flex footer">
+    <div class="d-flex">
         <a target="_blank" href="mailto:steve.fanega.ii@gmail.com">
             <img src="{{ asset('/storage/logo_images/GmailLogo.png') }}" alt="Gmail Link">
         </a>

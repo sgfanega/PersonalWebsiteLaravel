@@ -1,8 +1,8 @@
 @extends('layouts.default')
 @section('content')
 @if(!empty($aboutme))
-<div class="flex-container d-flex justify-content-center align-items-center aboutme">
-    <h1 class="display-6 text-center">About Me</h1>
+<div class="flex-container d-flex justify-content-center align-items-center my-3 aboutme">
+    <h1 class="display-6 text-center text-white">About Me</h1>
     @if(!Auth::guest())
         @if(Auth::user()->id == 1)
         <div class="row">
@@ -13,7 +13,7 @@
         @endif
     @endif
     <hr>
-    <div class="row">
+    <div class="row my-3">
         <div class="col">
             <img src="{{ asset('/storage/portrait_image/'.$aboutme->portrait_image) }}" alt="Self-Portrait" class="rounded">
         </div>
@@ -21,7 +21,7 @@
     <hr>
     <div class="row">
         <div class="col">
-            <p>{!! nl2br(e($aboutme->paragraph)) !!}</p>
+            <p class="lead">{!! nl2br(e($aboutme->paragraph)) !!}</p>
         </div>
     </div>
 </div>

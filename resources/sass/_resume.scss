@@ -1,3 +1,9 @@
 .resume {
+    /* Flex Direction */
     flex-direction: column;
+
+    @media only screen and (max-width: 768px) {
+        /* Media Query for mobile screen*/
+        height: 83vh;
+    }
 }

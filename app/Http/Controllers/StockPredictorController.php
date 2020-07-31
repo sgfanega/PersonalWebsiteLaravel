@@ -27,9 +27,7 @@ class StockPredictorController extends Controller
             $predictions = $this->getPredictionArrayFromPythonScript($python_script_output);
             unset($predictions[0]);
             $predictions = array_values($predictions);
-
-
-            $test_array = ['Something', 'Something New'];
+            
             $chartjs = app()->chartjs
             ->name('StockPredictor')
             ->type('line')
@@ -43,11 +41,34 @@ class StockPredictorController extends Controller
                     "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
                     "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
                     "pointHoverBackgroundColor" => "#fff",
-                    "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                    "pointHoverBorderColor" => "rgba(38, 185, 154, 0.31)",
+                    "fontColor" => "rbga(38, 185, 154, 0.31)",
                     'data' => $predictions,
                 ]
             ])
-            ->options([]);
+            ->options([
+                'legend' => [
+                    'labels' => [
+                        'fontColor' => "rgba(245, 245, 245, 1)"
+                    ]
+                ],
+                'scales' => [
+                    'xAxes' => [
+                        0 => [
+                            'ticks' => [
+                                'fontColor' => "rgba(245, 245, 245, 1)"
+                            ] 
+                        ]
+                    ],
+                    'yAxes' => [
+                        0 => [
+                            'ticks' => [
+                                'fontColor' => "rgba(245, 245, 245, 1)"
+                            ] 
+                        ]
+                    ]
+                ]
+            ]);
 
             return view('stockpredictor.index')->with('chartjs', $chartjs);
         }

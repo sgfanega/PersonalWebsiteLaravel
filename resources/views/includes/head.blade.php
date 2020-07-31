@@ -11,7 +11,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
 
 <!-- Fonts -->
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">

@@ -4,12 +4,12 @@
     @include('includes.head')
 </head>
 <body>
-<div id="app">
+<div class="main-page">
     @include('includes.header')
 
     <div class="container">
         @include('includes.messages')
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

@@ -7,6 +7,12 @@
                 <hr>
             @endif
         @endif
+        <div class="row text-center my-3">
+            <div class="col-12">
+                <h1 class="display-6 text-center text-white">Project List</h1>
+                <hr>
+            </div>
+        </div>
         @if(count($projects) > 0)
             @foreach($projects as $project)
                 <div class="container d-flex projects">

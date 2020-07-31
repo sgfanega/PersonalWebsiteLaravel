@@ -1,17 +1,97 @@
 @charset "UTF-8";
 
+.main-page {
+  /* The Image Used */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/The-Blacksmith.jpg?f78d23157bf9154ae51ab178da48be87);
+  /* Full Height */
+  height: 100%;
+  /* Center and sclaes the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Lighten the Image */
+  opacity: 90%;
+}
+
 .homepage {
+  /* Full width */
   width: 100%;
-  height: 80vh;
+  /* Flex Direction */
+  display: flex;
   flex-direction: column;
+  /* Font Colors */
+  color: whitesmoke;
+}
+
+.homepage p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .homepage {
+    /* Media Query for Mobile Screens Vertical */
+    height: 85.6vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .homepage {
+    /* Media Query for Tablet Screen Vertical */
+    height: 85.3vh;
+  }
+}
+
+@media only screen and (min-width: 886px) {
+  .homepage {
+    /* Media Query for Tablet Screen Horizontal */
+    height: 85.3vh;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .homepage {
+    /* Media Query for Small Laptop Screen */
+    height: 85.3vh;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .homepage {
+    /* Media Query for Medium Laptop Screen */
+    height: 85.3vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .homepage {
+    /* Media Query for Large Laptop Screen */
+    height: 85.3vh;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .homepage {
+    /* Media Query for 4K Screen */
+    height: 85.5vh;
+  }
 }
 
 .resume {
+  /* Flex Direction */
   flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .resume {
+    /* Media Query for mobile screen*/
+    height: 83vh;
+  }
 }
 
 .aboutme {
   flex-direction: column;
+  color: white;
 }
 
 .aboutme img {
@@ -20,19 +100,26 @@
 }
 
 .projects {
-  padding: 0em 0em 2.5em 0em;
+  margin: 0em 0em 2.5em 0em;
+  border-radius: 1em;
 }
 
 .projects img {
+  /* Image Height */
   height: 10em;
   width: 10em;
 }
 
 .projects .col {
-  padding: 0em 1em 0em 1;
+  /* Margin for col div */
+  margin: 0em 1em 0em 1em;
 }
 
 @media only screen and (max-width: 425px) {
+  .projects {
+    /* Media Query Image Height for Mobile */
+  }
+
   .projects img {
     height: 5em;
     width: 5em;
@@ -40,21 +127,48 @@
 }
 
 .projects-text {
+  /* Flex Direction*/
   flex-direction: column;
+  color: white;
 }
 
 .projects-text a {
+  /* Link Customization */
   background-color: transparent;
   text-decoration: none;
-  color: #cccccc;
+  color: whitesmoke;
 }
 
 .projects-text a:hover {
+  /* Link Hover Customization */
   text-decoration: none;
   color: #495057;
 }
 
+.stock-predictor {
+  width: 100%;
+  height: 100vh;
+}
+
+.header .navbar-dark a {
+  color: white;
+}
+
+.header a:hover {
+  color: grey;
+}
+
+.header .dropdown-item {
+  color: black;
+}
+
+.footer p {
+  /* Font Colors */
+  color: whitesmoke;
+}
+
 .footer img {
+  /* Image margin and size */
   margin: 0em 0.5em 0em 0.5em;
   height: 2em;
   width: 2em;
