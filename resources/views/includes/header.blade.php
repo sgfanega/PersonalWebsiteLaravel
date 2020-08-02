@@ -10,10 +10,10 @@
                     <a href="/home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About Me</a>
+                    <a href="{{ URL::route('homepage') }}#about" class="nav-link">About Me</a>
                 </li>                
                 <li class="nav-item">
-                    <a href="#resume" class="nav-link">Resumé</a>
+                    <a href="{{ URL::route('homepage') }}#resume" class="nav-link">Resumé</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
