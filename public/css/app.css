@@ -8,7 +8,7 @@
   /* Center and sclaes the image nicely */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: fixed;
   /* Lighten the Image */
   opacity: 90%;
 }
@@ -33,11 +33,7 @@
 
 .about {
   /* Flex Direction */
-  display: flex;
   flex-direction: column;
-  /* Alignment */
-  justify-content: center;
-  align-items: center;
   /* Text color */
   color: white;
 }
@@ -68,7 +64,10 @@
 }
 
 .resume {
+  /* Margin */
   margin: 3em;
+  /* Flex Direction */
+  flex-direction: column;
 }
 
 .projects {

@@ -1,4 +1,4 @@
-<div class="flex-container about" id="about">
+<div class="flex-container d-flex align-items-center justify-content-center about" id="about">
     <h1 class="display-6 text-white">About Me</h1>
     <img src="{{ asset('/storage/portrait_image/Portrait_Image.jpg') }}" alt="" class="rounded-circle">
     <div class="paragraph-border">

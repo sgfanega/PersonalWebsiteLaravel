@@ -21,12 +21,7 @@
 
 .about {
     /* Flex Direction */
-    display: flex;
     flex-direction: column;
-
-    /* Alignment */
-    justify-content: center;
-    align-items: center;
 
     /* Text color */
     color:white;
@@ -64,5 +59,9 @@
 }
 
 .resume {
+    /* Margin */
     margin: 3em;
+
+    /* Flex Direction */
+    flex-direction: column;
 }
