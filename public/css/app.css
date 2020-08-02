@@ -13,68 +13,62 @@
   opacity: 90%;
 }
 
-.homepage {
+.introduction {
   /* Full width */
   width: 100%;
+  /* Initial Height */
+  height: 95vh;
   /* Flex Direction */
   display: flex;
   flex-direction: column;
   /* Font Colors */
   color: whitesmoke;
+  /* Remove Margin top and bottom */
 }
 
-.homepage p {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
+.introduction p {
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
-@media only screen and (max-width: 767px) {
-  .homepage {
-    /* Media Query for Mobile Screens Vertical */
-    height: 85.6vh;
-  }
+.about {
+  /* Flex Direction */
+  display: flex;
+  flex-direction: column;
+  /* Alignment */
+  justify-content: center;
+  align-items: center;
+  /* Text color */
+  color: white;
 }
 
-@media only screen and (min-width: 768px) {
-  .homepage {
-    /* Media Query for Tablet Screen Vertical */
-    height: 85.3vh;
-  }
+.about img {
+  /* Default Image Size */
+  height: 300px;
+  width: 300px;
+  /* Default Margin */
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
-@media only screen and (min-width: 886px) {
-  .homepage {
-    /* Media Query for Tablet Screen Horizontal */
-    height: 85.3vh;
-  }
+.about .paragraph-border {
+  /* Paragrah-Border */
+  /* Padding */
+  padding: 1em;
+  /* Margin */
+  margin-bottom: 3em;
+  /* Border Styling */
+  border-style: solid;
+  border-radius: 2em;
+  border-color: darkgrey;
+  /* Background Color */
+  background-color: grey;
+  /* Transparency */
+  opacity: 95%;
 }
 
-@media only screen and (min-width: 1024px) {
-  .homepage {
-    /* Media Query for Small Laptop Screen */
-    height: 85.3vh;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .homepage {
-    /* Media Query for Medium Laptop Screen */
-    height: 85.3vh;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .homepage {
-    /* Media Query for Large Laptop Screen */
-    height: 85.3vh;
-  }
-}
-
-@media only screen and (min-width: 2560px) {
-  .homepage {
-    /* Media Query for 4K Screen */
-    height: 85.5vh;
-  }
+.resume {
+  margin: 3em;
 }
 
 .resume {

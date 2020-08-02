@@ -14,13 +14,10 @@
         @endif
         <hr>
         <div class="embed-responsive embed-responsive-1by1">
-            <object class="embed-responsive-item" data="/storage/pdf_sources/{{$resume->pdf_source}}" type="application/pdf"
-                internalinstsanceid="9" title="Résumé">
-            <iframe class="embed-responsive-item" src="/storage/pdf_sources/{{$resume->pdf_source}}">
+            <iframe class="embed-responsive-item" src="/storage/pdf_sources/{{$resume->pdf_source}}" width="100%" height="100%">
                 <p class="lead text-white"> Your broswer isn't supporting embedded pdf files. You can download the file 
                     <a href="/storage/pdf_sources/{{$resume->pdf_source}}">here</a>.</p>
             </iframe>
-            </object>
         </div>
     </div>
     @endif

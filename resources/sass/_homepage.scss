@@ -1,6 +1,9 @@
-.homepage {
+.introduction {
     /* Full width */
     width: 100%;
+
+    /* Initial Height */
+    height: 95vh;
 
     /* Flex Direction */
     display: flex;
@@ -9,43 +12,57 @@
     /* Font Colors */
     color: whitesmoke;
 
+    /* Remove Margin top and bottom */
     p {
-        margin-top: 0rem;
-        margin-bottom: 0rem;
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
+}
+
+.about {
+    /* Flex Direction */
+    display: flex;
+    flex-direction: column;
+
+    /* Alignment */
+    justify-content: center;
+    align-items: center;
+
+    /* Text color */
+    color:white;
+
+    img {
+        /* Default Image Size */
+        height: 300px;
+        width: 300px;
+
+        /* Default Margin */
+        margin-top: 2em;
+        margin-bottom: 2em;
     }
 
-    @media only screen and (max-width: 767px) {
-    /* Media Query for Mobile Screens Vertical */
-        height: 85.6vh;
-    }
+    .paragraph-border {
+        /* Paragrah-Border */
+        
+        /* Padding */
+        padding: 1em;
 
-    @media only screen and (min-width: 768px) {
-    /* Media Query for Tablet Screen Vertical */
-        height: 85.3vh;
-    }
+        /* Margin */
+        margin-bottom: 3em; 
 
-    @media only screen and (min-width: 886px) {
-    /* Media Query for Tablet Screen Horizontal */
-        height: 85.3vh;
-    }
+        /* Border Styling */
+        border-style: solid;
+        border-radius: 2em;
+        border-color:darkgrey;
 
-    @media only screen and (min-width: 1024px) {
-    /* Media Query for Small Laptop Screen */
-        height: 85.3vh;
-    }
+        /* Background Color */
+        background-color:grey;
 
-    @media only screen and (min-width: 1280px) {
-    /* Media Query for Medium Laptop Screen */
-        height: 85.3vh;
+        /* Transparency */
+        opacity: 95%
     }
+}
 
-    @media only screen and (min-width: 1440px) {
-    /* Media Query for Large Laptop Screen */
-        height: 85.3vh;
-    }
-
-    @media only screen and (min-width: 2560px) {
-    /* Media Query for 4K Screen */
-        height: 85.5vh;
-    }
+.resume {
+    margin: 3em;
 }
