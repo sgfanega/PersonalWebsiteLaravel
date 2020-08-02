@@ -23,12 +23,6 @@ Route::get('/', 'HomepageController@index')->name('homepage');
 // Homepage Page Views
 Route::resource('homepage', 'HomepageController');
 
-// Resume Page Views
-Route::resource('resume', 'ResumeController');
-
-//About Me Page Views
-Route::resource('aboutme', 'AboutMeController');
-
 //Projects Page Views
 Route::resource('projects', 'ProjectsController');
 
